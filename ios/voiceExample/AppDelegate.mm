@@ -1,17 +1,18 @@
 #import "AppDelegate.h"
-
+#import "RNSplashScreen.h"
 #import <React/RCTBundleURLProvider.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  bool isLoading = [super application:application didFinishLaunchingWithOptions:launchOptions];
   self.moduleName = @"voiceExample";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
   self.initialProps = @{};
-
-  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+  [RNSplashScreen show];
+  return isLoading;
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
