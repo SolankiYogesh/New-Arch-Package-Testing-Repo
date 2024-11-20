@@ -20,7 +20,14 @@ export default () => {
           name={Screens.Main}
           options={{headerShown: false}}
         />
-        <Stack.Screen component={SoundPluginScreen} name={Screens.Sound} />
+        <Stack.Screen
+          component={SoundPluginScreen}
+          name={Screens.Sound}
+          options={{
+            title: 'Now Playing',
+            headerTitleAlign: 'center',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

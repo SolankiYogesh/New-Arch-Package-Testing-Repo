@@ -17,7 +17,10 @@ export default ({item}: PluginItemProps) => {
   }, [navigation]);
 
   return (
-    <TouchableOpacity style={styles.itemContainer} onPress={onPressItem}>
+    <TouchableOpacity
+      disabled={!item.name}
+      style={styles.itemContainer}
+      onPress={onPressItem}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.iconStyle}
