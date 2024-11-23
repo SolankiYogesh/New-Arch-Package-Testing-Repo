@@ -85,8 +85,6 @@ export default () => {
       Tracks[currentTrackIndex.current].url,
       Sound.MAIN_BUNDLE,
       (error, props) => {
-        console.log('props', props);
-        console.log('error', error);
         setIsLoading(false);
         if (error) {
           Alert.alert('Error', 'failed to load the sound' + error);

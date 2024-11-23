@@ -1,4 +1,4 @@
-import {FlatList, StyleSheet, View} from 'react-native';
+import {FlatList, SafeAreaView, StyleSheet} from 'react-native';
 import {CommonStyles, Images, Screens} from '@/Common';
 import React from 'react';
 import PluginItem from './Components/PluginItem';
@@ -20,20 +20,20 @@ const DATA = [
 
 export default () => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={CommonStyles.flex}>
       <FlatList
         keyExtractor={item => item.name}
         data={DATA}
-        style={CommonStyles.flex}
+        style={styles.container}
         renderItem={({item}) => <PluginItem item={item} />}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: 10,
   },
 });
